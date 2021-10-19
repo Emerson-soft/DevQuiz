@@ -1,11 +1,10 @@
 import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
 import 'package:DevQuiz/home/widgets/level_button/level_button_widget.dart';
+import 'package:DevQuiz/home/widgets/quiz_card/quiz_card_widget.dart';
 import 'package:flutter/material.dart';
 
-
-
 class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -16,9 +15,50 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: LevelButtonWidget(
-        label: "Perito",
-      ),   
-    );
+      body: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 35),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [             
+                LevelButtonWidget(
+                  label: "Fácil",
+                ),
+                LevelButtonWidget(
+                  label: "Médio",
+                ),
+                LevelButtonWidget(
+                  label: "Difícil",
+                ),
+                LevelButtonWidget(
+                  label: "Perito",
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(child: 
+              GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: [
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                ],
+              )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ));
   }
 }

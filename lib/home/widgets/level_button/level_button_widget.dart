@@ -20,7 +20,7 @@ class LevelButtonWidget extends StatelessWidget {
       "borderColor": AppColors.levelButtonBorderMedio,
       "fontColor": AppColors.levelButtonTextMedio,
     },
-     "Díficl": {
+     "Difícil": {
       "color": AppColors.levelButtonDificil,
       "borderColor": AppColors.levelButtonBorderDificil,
       "fontColor": AppColors.levelButtonTextDificil,
@@ -49,7 +49,7 @@ class LevelButtonWidget extends StatelessWidget {
 
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 6),
         child: Text(
           label,
           style: GoogleFonts.notoSans(
